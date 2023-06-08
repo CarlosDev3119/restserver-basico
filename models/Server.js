@@ -13,7 +13,6 @@ class Server {
         this.middlewares();
 
         this.routes();
-
     }
 
     middlewares() {
@@ -27,9 +26,7 @@ class Server {
     }
 
     routes() {
-
         this.app.use( this.paths.usuarios, require('../routes/usuarios') );
-
     }
 
     listen() {
