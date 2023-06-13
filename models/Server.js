@@ -1,4 +1,5 @@
 const express = require('express');
+const dbConnection = require('../database/dbConfig');
 
 class Server {
 
@@ -13,6 +14,12 @@ class Server {
         this.middlewares();
 
         this.routes();
+
+        this.connectDb()
+    }
+
+    async connectDb () {
+        await dbConnection();
     }
 
     middlewares() {
